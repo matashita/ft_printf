@@ -6,7 +6,7 @@
 /*   By: teyamada <teyamada@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 19:48:09 by teyamada          #+#    #+#             */
-/*   Updated: 2023/03/07 20:26:57 by teyamada         ###   ########.fr       */
+/*   Updated: 2023/03/07 23:43:28 by teyamada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	check_conv(const char **start, const char **fmt, int *n, va_list *ap)
 	else
 	{
 		ft_putchar_n(n, '%', 1);
-		ft_putchar_n(n, *fmt, 1);
+		ft_putchar_n(n, **fmt, 1);
 	}
 	(*fmt)++;
 	return (0);
