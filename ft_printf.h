@@ -6,7 +6,7 @@
 /*   By: teyamada <teyamada@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 22:41:35 by teyamada          #+#    #+#             */
-/*   Updated: 2023/03/06 22:23:48 by teyamada         ###   ########.fr       */
+/*   Updated: 2023/03/08 00:17:05 by teyamada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdio.h>
+# include <limits.h>
 
 int		ft_printf(const char *fmt, ...);
-int		check_conv(const char **start, const char **fmt, int *n, va_list *ap);
+int		check_conv(const char **fmt, int *n, va_list *ap);
 void	print_not_per(const char **start, const char **fmt, int *n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putchar_n(int *n, char c, int fd);
