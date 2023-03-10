@@ -6,13 +6,13 @@
 /*   By: teyamada <teyamada@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 00:15:34 by teyamada          #+#    #+#             */
-/*   Updated: 2023/03/06 01:45:08 by teyamada         ###   ########.fr       */
+/*   Updated: 2023/03/10 15:06:16 by teyamada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_itoa_hex(int *n, unsigned long long int ui, char flag)
+void	ft_itoa_hex(size_t *n, unsigned long long int ui, char flag)
 {
 	if (ui > 15)
 	{
@@ -28,12 +28,12 @@ void	ft_itoa_hex(int *n, unsigned long long int ui, char flag)
 	return ;
 }
 
-void	ft_print_c(int *n, char ap)
+void	ft_print_c(size_t *n, char ap)
 {
 	ft_putchar_n(n, ap, 1);
 }
 
-void	ft_print_s(int *n, char *ap)
+void	ft_print_s(size_t *n, char *ap)
 {
 	if (ap == NULL)
 	{
@@ -43,7 +43,7 @@ void	ft_print_s(int *n, char *ap)
 	ft_putstr_n(n, ap, 1);
 }
 
-void	ft_print_p(int *n, void *ap)
+void	ft_print_p(size_t *n, void *ap)
 {
 	unsigned long long int	ui;
 

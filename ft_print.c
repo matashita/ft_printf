@@ -6,22 +6,13 @@
 /*   By: teyamada <teyamada@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 19:48:09 by teyamada          #+#    #+#             */
-/*   Updated: 2023/03/08 00:19:18 by teyamada         ###   ########.fr       */
+/*   Updated: 2023/03/10 15:34:52 by teyamada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_not_per(const char **start, const char **fmt, int *n)
-{
-	while (**fmt != '%' && **fmt)
-		(*fmt)++;
-	write(1, *start, *fmt - *start);
-	*n += *fmt - *start;
-	return ;
-}
-
-int	check_conv(const char **fmt, int *n, va_list *ap)
+int	check_conv(const char **fmt, size_t *n, va_list *ap)
 {
 	void	*p;
 
@@ -53,24 +44,23 @@ int	check_conv(const char **fmt, int *n, va_list *ap)
 int	ft_printf(const char *fmt, ...)
 {
 	va_list		ap;
-	int			n;
-	const char	*start;
+	size_t		n;
 
 	n = 0;
 	va_start(ap, fmt);
 	if (fmt == NULL)
-		n = -1;
+	{
+		va_end(ap);
+		return (-1);
+	}
 	while (n >= 0 && *fmt)
 	{
-		start = fmt;
 		if (*fmt != '%')
-			print_not_per(&start, &fmt, &n);
+			ft_putchar_n(n, *fmt, 1);
 		else
-		{
 			check_conv(&fmt, &n, &ap);
-			fmt++;
-		}
+		fmt++;
 	}
 	va_end(ap);
-	return (n);
+	return ((int)n);
 }
