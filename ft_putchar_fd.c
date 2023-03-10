@@ -6,14 +6,19 @@
 /*   By: teyamada <teyamada@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:41:36 by teyamada          #+#    #+#             */
-/*   Updated: 2023/03/10 15:31:29 by teyamada         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:02:43 by teyamada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_n(size_t *n, char c, int fd)
+void	ft_putchar_n(ssize_t *n, char c, int fd)
 {
-	write(fd, &c, 1);
-	*n += 1;
+	if (*n >= 0)
+	{
+		if (write(fd, &c, 1) != -1)
+			*n += 1;
+		else
+			*n = -1;
+	}
 }

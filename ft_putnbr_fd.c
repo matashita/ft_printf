@@ -6,13 +6,13 @@
 /*   By: teyamada <teyamada@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 07:46:14 by teyamada          #+#    #+#             */
-/*   Updated: 2023/03/10 15:31:24 by teyamada         ###   ########.fr       */
+/*   Updated: 2023/03/10 15:55:14 by teyamada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_sub_putnbr_n(size_t *n, int i, int fd)
+static void	ft_sub_putnbr_n(ssize_t *n, int i, int fd)
 {
 	if (i == 0)
 		return ;
@@ -20,7 +20,7 @@ static void	ft_sub_putnbr_n(size_t *n, int i, int fd)
 	ft_putchar_n(n, i % 10 + '0', fd);
 }
 
-void	ft_putnbr_n(size_t *n, int i, int fd)
+void	ft_putnbr_n(ssize_t *n, int i, int fd)
 {
 	if (i == 0)
 	{

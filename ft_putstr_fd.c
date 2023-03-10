@@ -6,13 +6,13 @@
 /*   By: teyamada <teyamada@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 07:46:31 by teyamada          #+#    #+#             */
-/*   Updated: 2023/03/10 15:30:57 by teyamada         ###   ########.fr       */
+/*   Updated: 2023/03/10 15:55:08 by teyamada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr_n(size_t *n, char *s, int fd)
+void	ft_putstr_n(ssize_t *n, char *s, int fd)
 {
 	while (*s)
 	{
