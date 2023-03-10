@@ -6,7 +6,7 @@
 /*   By: teyamada <teyamada@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 19:48:09 by teyamada          #+#    #+#             */
-/*   Updated: 2023/03/10 15:34:52 by teyamada         ###   ########.fr       */
+/*   Updated: 2023/03/10 15:39:01 by teyamada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_printf(const char *fmt, ...)
 	while (n >= 0 && *fmt)
 	{
 		if (*fmt != '%')
-			ft_putchar_n(n, *fmt, 1);
+			ft_putchar_n(&n, *fmt, 1);
 		else
 			check_conv(&fmt, &n, &ap);
 		fmt++;
